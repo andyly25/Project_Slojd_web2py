@@ -9,10 +9,12 @@
 ## - api is an example of Hypermedia API support and access control
 #########################################################################
 import indexmod
+import haikumake
 def index():
     blah = randomness(5)
     response.flash = T("Welcome to web2py!")
-    return dict(blah=blah)
+    htype1 = haikumake.haikuType2()
+    return dict(blah=blah, htype1=htype1)
 
 def randomness (n):
     # import random
