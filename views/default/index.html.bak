@@ -6,9 +6,9 @@
   <p>{{=blah}}</p>
   <div style="background-color:#2ecc71; color:red; margin:20px; padding:20px;">
       <h1 style="color:#2c3e50; font-family:Vladimir Script; text-align:center">
-          <p><i>{{=htype1[0]}}</i></p>
-          <p><i>{{=htype1[1]}}</i></p>
-          <p><i>{{=htype1[2]}}</i></p>
+          <p>{{=htype1[0]}}</p>
+          <p>{{=htype1[1]}}</p>
+          <p>{{=htype1[2]}}</p>
       </h1>
   </div>
 </body>

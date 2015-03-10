@@ -14,7 +14,7 @@ def index():
     blah = randomness(5)
     response.flash = T("Welcome to web2py!")
     htype1 = haikumake.haikuType2()
-    #return dict(blah=blah, htype1=htype1)
+    return dict(blah=blah, htype1=htype1)
 
 def randomness (n):
     # import random
