@@ -4,6 +4,19 @@
     /*visibility: hidden;*/
 }
 
+.joeBg{
+  background-color:#2ecc71; 
+  color:red; 
+  margin:40px; 
+  padding:40px;">
+}
+
+h1{
+  color:#2c3e50; 
+  font-family:amazone_BT; 
+  text-align:center
+}
+
 /*#newlines{
     position: absolute;
     top: 60%;
