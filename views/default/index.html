@@ -5,9 +5,7 @@
 <html>
 
 </a>
-<body style="background:#f1c40f">
-	<p>{{=blah}}</p>
-	<pre class="src">{{=blah2}} </pre>
+<body>
 	<div style="background-color:#2ecc71; color:red; margin:40px; padding:40px;">
 		<h1 style="color:#2c3e50; font-family:amazone_BT; text-align:center">
 
@@ -19,44 +17,4 @@
 		</h1>
 	</div>
 </body>
-	<span class="typewriter">
-
-		Your content goes here
-
-	</span>
-	<p id="target"></p>
-<!-- 	<div id = "src">
-		Type all DOM elements simultaneously...with a loop!
-		Very risky effect, but still it's available.
-		I wouldn't recommend it unless you have someting in mind.
-		Read Notes and Advanced Features, to see how you can force end the jTypeWriter effect.
-	</div> -->
-
 </html>
-
-<script>
-$(function() {
-$(".typewriter").typewriter({
-'speed':100 // default: 300
-});
-});
-</script>
-
-<script type="text/javascript">
-$(function() {
-    var srcText = $(".src").html();
-    var i = 0;
-    var result = srcText[i];
-    setInterval(function() {
-            if(i == srcText.length) {
-                clearInterval(this);
-                return;
-            };
-            i++;
-            result += srcText[i].replace("\n", "<br />");
-            $("#target").html( result);
-    },
-    50); // the period between every character and next one, in milliseonds.
-});
-
-</script>
