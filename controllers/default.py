@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
 
-#########################################################################
-## This is a sample controller
-## - index is the default action of any application
-## - user is required for authentication and authorization
-## - download is for downloading files uploaded in the db (does streaming)
-## - api is an example of Hypermedia API support and access control
-#########################################################################
 import indexmod
 import haikumake
 def index():
     blah = randomness(5)
     response.flash = T("Welcome to web2py!")
     htype1 = haikumake.haikuType2()
-    return dict(blah=blah, htype1=htype1)
+    blah2 = haikumake.haikuType1()
+    return dict(blah=blah, htype1=htype1, blah2=blah2)
 
 def randomness (n):
     # import random
