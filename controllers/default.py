@@ -10,6 +10,10 @@ def index():
     blah2 = haikumake.haikuType1()
     return dict(blah=blah, htype1=htype1, blah2=blah2)
 
+def randomHaiku():
+    blah2 = haikumake.haikuType1()
+    return dict(blah2=blah2)
+
 def randomness (n):
     # import random
     line = ""
@@ -18,6 +22,7 @@ def randomness (n):
         line = line + str(temp)
         n-=temp
     return line
+
 
 def user():
     """

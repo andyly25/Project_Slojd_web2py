@@ -2,45 +2,18 @@
 
 <!-- I extended base.html so that it can access jquery, css, and js files -->
 {{extend 'base.html'}}
+
 <html>
-
-</a>
-<body style="background:#f1c40f">
-	<p>{{=blah}}</p>
-	<pre class="src">{{=blah2}} </pre>
-	<div style="background-color:#2ecc71; color:red; margin:40px; padding:40px;">
+	<body>
+		<div style="background-color:#2ecc71; color:red; margin:40px; padding:40px;">
 		<h1 style="color:#2c3e50; font-family:amazone_BT; text-align:center">
-
-			<p><i>{{=htype1[0]}}</i></p>
-			<p><i>{{=htype1[1]}}</i></p>
-			<p><i>{{=htype1[2]}}</i></p>
-
-		
+			
+			<p id="target"></p>
 		</h1>
 	</div>
-</body>
-	<span class="typewriter">
-
-		Your content goes here
-
-	</span>
-	<p id="target"></p>
-<!-- 	<div id = "src">
-		Type all DOM elements simultaneously...with a loop!
-		Very risky effect, but still it's available.
-		I wouldn't recommend it unless you have someting in mind.
-		Read Notes and Advanced Features, to see how you can force end the jTypeWriter effect.
-	</div> -->
-
+	<pre class="src">{{=blah2}} </pre>
+	</body>
 </html>
-
-<script>
-$(function() {
-$(".typewriter").typewriter({
-'speed':100 // default: 300
-});
-});
-</script>
 
 <script type="text/javascript">
 $(function() {
@@ -58,5 +31,4 @@ $(function() {
     },
     50); // the period between every character and next one, in milliseonds.
 });
-
 </script>
