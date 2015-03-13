@@ -54,4 +54,4 @@ def inputMatching(userIn):
 				break
 	return [0,0]
 
-#print inputMatching("obfuscation")
+print inputMatching("obfuscation")
