@@ -12,15 +12,6 @@ def randomHaiku():
     haiku2 = haikumake.createHaiku2()
     return dict(haiku2=haiku2)
 
-def randomness (n):
-    # import random
-    line = ""
-    while (n > 0):
-        temp = indexmod.randint(1, n)
-        line = line + str(temp)
-        n-=temp
-    return line
-
 
 def user():
     """
