@@ -71,3 +71,83 @@ CREATE TABLE child(
     time_of_birth TIME
 );
 success!
+timestamp: 2015-03-13T01:57:54.052000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T01:58:54.047000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T01:59:53.986000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:00:54.974000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:01:54.954000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:02:54.994000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:03:54.978000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:04:54.972000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:05:54.974000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+timestamp: 2015-03-13T02:07:08.268000
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
