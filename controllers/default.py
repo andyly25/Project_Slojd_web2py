@@ -20,7 +20,7 @@ def echo():
     return "jQuery('#target').html(%s);" % repr(request.vars.name)
 
 def new_post():
-    form = SQLFORM(db.post)
+    form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
         return DIV("Message posted")
     elif form.errors:

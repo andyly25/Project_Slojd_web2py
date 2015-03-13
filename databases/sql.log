@@ -59,3 +59,9 @@ CREATE TABLE post(
     your_message TEXT
 );
 success!
+timestamp: 2015-03-13T02:33:44.152746
+CREATE TABLE npost(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    your_message TEXT
+);
+success!
