@@ -13,10 +13,18 @@ def randomHaiku():
     return dict(haiku2=haiku2)
 
 def test():
-    form = SQLFORM(db.child)
-    if form.process().accepted:
-        response.flash = 'record inserted'
-    return dict(form=form)
+    return dict()
+
+# part of ajax sample 1: echos what you type
+def echo():
+    return "jQuery('#target').html(%s);" % repr(request.vars.name)
+
+def new_post():
+    form = SQLFORM(db.post)
+    if form.accepts(request, formname=None):
+        return DIV("Message posted")
+    elif form.errors:
+        return TABLE(*[TR(k, v) for k, v in form.errors.items()])
 
 def user():
     """

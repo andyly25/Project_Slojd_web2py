@@ -71,3 +71,9 @@ CREATE TABLE child(
     time_of_birth TIME
 );
 success!
+timestamp: 2015-03-13T02:07:38.958239
+CREATE TABLE post(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    your_message TEXT
+);
+success!
