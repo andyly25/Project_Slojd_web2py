@@ -1,7 +1,7 @@
 .src {
-    white-space: pre;
-    display: none;
-    /*visibility: hidden;*/
+  white-space: pre;
+  display: none;
+  /*visibility: hidden;*/
 }
 
 .joeBg{
@@ -19,4 +19,14 @@ h1{
 
 body{
   background-color: #2C3E50;
+}
+
+#button1{
+  float: right;
+  position: relative; 
+  top: -7px;
+}
+
+#button2{
+  
 }

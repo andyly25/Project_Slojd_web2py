@@ -5,7 +5,7 @@ import glob
 import errno
 import HaikuMod
 
-def randSylLine (max):
+def getRandomSyllableList (max):
 	startNum = randint(1, 4)
 	sylList = [startNum]
 	remainSyl = max - startNum
@@ -18,7 +18,7 @@ def randSylLine (max):
 		remainSyl-=tempNum
 	return sylList
 
-def randFileLine (size):
+def getRandomFileList (size):
 	fileList = []
 	count = 0
 	while (count < size):
@@ -28,9 +28,9 @@ def randFileLine (size):
 	return fileList
 
 
-def makeLine(lineNumber, sylCountList, fileCountList):
+def createLine(lineNumber, sylCountList, fileCountList):
 	# print ("SYL: " + str(sum(sylCountList)))
-	print ("FILE: " + str(fileCountList))
+	# print ("FILE: " + str(fileCountList))
 	retLine = ""
 	for tempSy, tempFi in zip(sylCountList, fileCountList):
 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
@@ -47,7 +47,7 @@ def makeLine(lineNumber, sylCountList, fileCountList):
 		retLine += "."
 	return retLine;	
 
-def fileLine2 (size, fileList):
+def editLine (size, fileList):
 	count = 0
 	while (count < size-1):
 		if(fileList[count-1] == 1 or fileList[count + 1] == 1):
@@ -69,37 +69,31 @@ def fileLine2 (size, fileList):
 		count+=1
 	return fileList	
 
-def haikuType1():
-	sylList1 = randSylLine(5)
-	sylList2 = randSylLine(7)
-	sylList3 = randSylLine(5)
+def createHaiku1():
+	sylList1 = getRandomSyllableList(5)
+	sylList2 = getRandomSyllableList(7)
+	sylList3 = getRandomSyllableList(5)
 
-	fileList1 = randFileLine(len(sylList1))
-	fileList2 = randFileLine(len(sylList2))
-	fileList3 = randFileLine(len(sylList3))
+	fileList1 = getRandomFileList(len(sylList1))
+	fileList2 = getRandomFileList(len(sylList2))
+	fileList3 = getRandomFileList(len(sylList3))
 
-	haikuStr = ("\n" + makeLine(1, sylList1, fileList1) + "\n" + 
-				makeLine(2, sylList2, fileList2) + "\n" + 
-				makeLine(3, sylList3, fileList3) + "\n")
-
-	return haikuStr
-
-def haikuType2():
-	sylList1 = randSylLine(5)
-	sylList2 = randSylLine(7)
-	sylList3 = randSylLine(5)
-	fileList1 = randFileLine(len(sylList1))
-	fileList2 = randFileLine(len(sylList2))
-	fileList3 = randFileLine(len(sylList3))
-
-	haikuStr1 = ("\n" + makeLine(1, sylList1, fileList1) + "\n" + 
-				makeLine(2, sylList2, fileList2) + "\n" + 
-				makeLine(3, sylList3, fileList3) + "\n")
-	haikuStr = [0,1,2]
-	haikuStr[0] = makeLine(1, sylList1, fileLine2(len(sylList1), fileList1))
-	haikuStr[1] = makeLine(2, sylList2, fileLine2(len(sylList2), fileList2))
-	haikuStr[2] = makeLine(3, sylList3, fileLine2(len(sylList3), fileList3))
+	haikuStr = ("\n" + createLine(1, sylList1, fileList1) + "\n" + 
+				createLine(2, sylList2, fileList2) + "\n" + 
+				createLine(3, sylList3, fileList3) + "\n")
 
 	return haikuStr
 
-# print(haikuType2())
+def createHaiku2():
+	sylList1 = getRandomSyllableList(5)
+	sylList2 = getRandomSyllableList(7)
+	sylList3 = getRandomSyllableList(5)
+	fileList1 = getRandomFileList(len(sylList1))
+	fileList2 = getRandomFileList(len(sylList2))
+	fileList3 = getRandomFileList(len(sylList3))
+
+	haikuStr = ("\n" + createLine(1, sylList1, editLine(len(sylList1), fileList1)) + "\n" + 
+				createLine(2, sylList2, editLine(len(sylList2), fileList2)) + "\n" + 
+				createLine(3, sylList3, editLine(len(sylList3), fileList3)) + "\n")
+
+	return haikuStr

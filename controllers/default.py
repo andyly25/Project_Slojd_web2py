@@ -4,15 +4,13 @@
 import indexmod
 import haikumake
 def index():
-    blah = randomness(5)
-    response.flash = T("Welcome to web2py!")
-    htype1 = haikumake.haikuType2()
-    blah2 = haikumake.haikuType1()
-    return dict(blah=blah, htype1=htype1, blah2=blah2)
+    haiku1 = haikumake.createHaiku1()
+    haiku2 = haikumake.createHaiku2()
+    return dict(haiku1=haiku1, haiku2=haiku2)
 
 def randomHaiku():
-    blah2 = haikumake.haikuType1()
-    return dict(blah2=blah2)
+    haiku2 = haikumake.createHaiku2()
+    return dict(haiku2=haiku2)
 
 def randomness (n):
     # import random
