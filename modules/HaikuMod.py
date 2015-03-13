@@ -14,21 +14,26 @@ def getWordFile(fileNumR, sylNumR):
 		return getAdverbFile(sylNumR)
 
 def getNounFile(sylNumN):
-	return filter(None, fetchFile(1, sylNumN))
+
+	return list(filter(None, fetchFile(1, sylNumN)))
 
 def getAdjFile(sylNumAj):
-	return filter(None, fetchFile(2, sylNumAj))
+
+	return list(filter(None, fetchFile(2, sylNumAj)))
 
 def getVerbFile(sylNumV):
-	return filter(None, fetchFile(3, sylNumV))
+
+	return list(filter(None, fetchFile(3, sylNumV)))
 
 def getAdverbFile(sylNumAv):
+
 	return filter(None, fetchFile(4, sylNumAv))
-	
 def fetchFile(fileNum, sylNum):
 	fileLines = fetchFilePath(fileNum, sylNum).read().split('\r\n')
+	if os.name == 'nt':
+		fileLines = fetchFilePath(fileNum, sylNum).read().split('\n')
 	fetchFilePath(fileNum, sylNum).close
-	return fileLines	
+	return fileLines
 
 def fetchFilePath(fileNumP, sylNumP):
 	return open(fetchFileStrPath(fileNumP, sylNumP), "r")
@@ -51,4 +56,3 @@ def fetchFileStrPath(filePathNum, sylNum):
 
 	if filePathNum == 4:
 		return adverbFilePath + "/" + str(sylNum) +"syllableadverbs.txt"
-
