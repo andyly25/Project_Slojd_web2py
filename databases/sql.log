@@ -1,4 +1,4 @@
-timestamp: 2015-03-08T12:23:35.112510
+timestamp: 2015-03-13T02:16:21.559232
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -10,21 +10,21 @@ CREATE TABLE auth_user(
     registration_id CHAR(512)
 );
 success!
-timestamp: 2015-03-08T12:23:35.206547
+timestamp: 2015-03-13T02:16:21.660957
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2015-03-08T12:23:35.324152
+timestamp: 2015-03-13T02:16:21.762345
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
 );
 success!
-timestamp: 2015-03-08T12:23:35.407546
+timestamp: 2015-03-13T02:16:21.844089
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
@@ -33,7 +33,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2015-03-08T12:23:35.500811
+timestamp: 2015-03-13T02:16:21.936632
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2015-03-08T12:23:35.602356
+timestamp: 2015-03-13T02:16:22.036976
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
@@ -53,25 +53,7 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2015-03-13T01:12:45.036767
-CREATE TABLE child(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name CHAR(512),
-    weight DOUBLE,
-    birth_date DATE,
-    time_of_birth TIME
-);
-success!
-timestamp: 2015-03-13T01:14:43.661443
-CREATE TABLE child(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name CHAR(512),
-    weight DOUBLE,
-    birth_date DATE,
-    time_of_birth TIME
-);
-success!
-timestamp: 2015-03-13T02:07:38.958239
+timestamp: 2015-03-13T02:16:22.137352
 CREATE TABLE post(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     your_message TEXT
