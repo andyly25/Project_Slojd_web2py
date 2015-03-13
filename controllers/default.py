@@ -12,6 +12,11 @@ def randomHaiku():
     haiku2 = haikumake.createHaiku2()
     return dict(haiku2=haiku2)
 
+def test():
+    form = SQLFORM(db.child)
+    if form.process().accepted:
+        response.flash = 'record inserted'
+    return dict(form=form)
 
 def user():
     """

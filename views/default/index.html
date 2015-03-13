@@ -1,34 +1,25 @@
-{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
 
 <!-- I extended base.html so that it can access jquery, css, and js files -->
 {{extend 'base.html'}}
 <html>
-<head>
-	<meta charset="utf=8">
-	<style type="text/css">
-	#rand_back_color {
-		color:red; 
-		margin:40px; 
-		padding:40px;">
-	}
-	</style>
-</head>
-</a>
-<body onload="return ran_col()">
-	<div id="rand_back_color">
-		<h1>
-			<p id="target"></p>
-		</h1>
-	</div>
-	<pre class="src">{{=haiku1}} </pre>
-</div>
-<script type="text/javascript">
-		function ran_col() { //function name
-		    var color = '#'; // hexadecimal starting symbol
-		    var letters = ['F64747','663399','E4F1FE','22313F','86E2D5','BDC3C7','03C9A9','1BBC9B']; //Set your colors here
-		    color += letters[Math.floor(Math.random() * letters.length)];
-		    document.getElementById('rand_back_color').style.background = color;
+	<head>
+		<meta charset="utf=8">
+		<style type="text/css">
+		#rand_back_color {
+			color:red; 
+			margin:40px; 
+			padding:40px;">
 		}
-		</script>
+		</style>
+	</head>
+
+	<body onload="return ran_col()">
+		<div id="rand_back_color">
+			<h1>
+				<p id="target"></p>
+			</h1>
+		</div>
+		<pre class="src">{{=haiku1}} </pre>
 	</body>
-	</html>
+	<a href="test" >Testing</a>
+</html>

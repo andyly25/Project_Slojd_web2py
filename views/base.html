@@ -9,15 +9,7 @@
 <!--[if IE 9]><html class="ie9 ie-lte9 no-js" lang="{{=T.accepted_language or 'en'}}"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{=T.accepted_language or 'en'}}"> <!--<![endif]-->
 <head>
-<title>{{=response.title or request.application}}</title>
-  <!--[if !HTML5]>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
-  <![endif]-->
-  <!-- www.phpied.com/conditional-comments-block-downloads/ -->
-  <!-- Always force latest IE rendering engine
-       (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
-	   
+
   <meta charset="utf-8" />
 
   <!-- http://dev.w3.org/html5/markup/meta.name.html -->
@@ -49,14 +41,6 @@
 
   {{include 'web2py_ajax.html'}}
 
-  {{
-  # using sidebars need to know what sidebar you want to use
-  left_sidebar_enabled = globals().get('left_sidebar_enabled',False)
-  right_sidebar_enabled = globals().get('right_sidebar_enabled',False)
-  middle_columns = {0:'span12',1:'span9',2:'span6'}[
-    (left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
-  }}
-
    <!-- uncomment here to load jquery-ui -->
        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
@@ -64,20 +48,20 @@
   <noscript><link href="{{=URL('static', 'css/web2py_bootstrap_nojs.css')}}" rel="stylesheet" type="text/css" /></noscript>
   {{block head}}
   	{{=A(
-	IMG(_src=URL('static/images','Purely-Random-Haiku.png'), _name = "Haiku", _alt="Haiku", _width = "250", _height = "120", _id = "button1", _border = "0",
-	_onMouseOver = "this.src='/Project_Slojd_web2py/static/images/Purely-Random-Haiku-2.png'",
-	_onMouseOut = "this.src='/Project_Slojd_web2py/static/images/Purely-Random-Haiku.png'" ),
-	_href=URL('default', 'index')
-	)
-}}
+    	IMG(_src=URL('static/images','Purely-Random-Haiku.png'), _name = "Haiku", _alt="Haiku", _width = "250", _height = "120", _id = "button1", _border = "0",
+    	_onMouseOver = "this.src='/Project_Slojd_web2py/static/images/Purely-Random-Haiku-2.png'",
+    	_onMouseOut = "this.src='/Project_Slojd_web2py/static/images/Purely-Random-Haiku.png'" ),
+    	_href=URL('default', 'randomHaiku')
+    	)
+    }}
 
-{{=A(
-	IMG(_src=URL('static/images','Haiku-Version-20-.png'), _name = "random Haiku", _alt="random Haiku",_width = "250", _height = "100", _id = "button2", _border = "0",
-	_onMouseOver = "this.src='/Project_Slojd_web2py/static/images/Haiku-Version-20--2.png'",
-	_onMouseOut = "this.src='/Project_Slojd_web2py/static/images/Haiku-Version-20-.png'" ),
-	_href=URL('default', 'randomHaiku')
-	)
-}}
+    {{=A(
+    	IMG(_src=URL('static/images','Haiku-Version-20-.png'), _name = "random Haiku", _alt="random Haiku",_width = "250", _height = "100", _id = "button2", _border = "0",
+    	_onMouseOver = "this.src='/Project_Slojd_web2py/static/images/Haiku-Version-20--2.png'",
+    	_onMouseOut = "this.src='/Project_Slojd_web2py/static/images/Haiku-Version-20-.png'" ),
+    	_href=URL('default', 'index')
+    	)
+    }}
   {{end}}
 </head>
 <body>
@@ -90,3 +74,4 @@
   <!-- The javascript =============================================
        (Placed at the end of the document so the pages load faster) -->
   <script src="{{=URL('static','js/typewriter.js')}}"></script>
+  <script src="{{=URL('static','js/randomColor.js')}}"></script>

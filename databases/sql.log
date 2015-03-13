@@ -53,3 +53,21 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2015-03-13T01:12:45.036767
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+success!
+timestamp: 2015-03-13T01:14:43.661443
+CREATE TABLE child(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    weight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME
+);
+success!
