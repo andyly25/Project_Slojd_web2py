@@ -3,6 +3,8 @@
 
 import indexmod
 import haikumake
+import userInputMatching
+
 def index():
     haiku1 = haikumake.createHaiku1()
     haiku2 = haikumake.createHaiku2()
@@ -26,7 +28,7 @@ def new_post():
     # latest = db(db.npost.your_message!=None).select()
     form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
-        return DIV(q2.your_message)
+        return DIV(userInputMatching.inputMatching(q2.your_message))
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
 
