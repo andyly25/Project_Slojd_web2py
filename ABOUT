@@ -1,5 +1,31 @@
-Write something about this app.
-SHIVAMNDAVE- try again with renamed repo that shows up in the web2py
-Developed with web2py.
+# Project_Slojd_web2py
 
-This is made with Python
+Andy Ly
+Joseph Ou
+Shivam Dave
+
+This 'ABOUT' breaks down all the directories and files used in the project, if you want to know how to run our program, go to the README.md
+
+/controllers
+	Controllers contains 'default.py' which contains a majority of the code that connects the web2py javascript and html code with our back-end python code.
+		This directory shows the python code that interacts with the database for the input page and it showcases how we use the AJAX technique to complete the gap between the python and js/html code
+
+/models
+	Models contains the 'table.py' file that contains some code refardng our database that holds inputs for the custom haiku creator
+		The 'table.py' file is quite small, but it is important in our input gathering and makes up where we hold the entries made by the user
+
+/modules
+	All the backend python code is contained here, files like 'HaikuMake.py', 'HaikuMod.py', and 'UserInputMatching.py', which handle the dictionary files and create the different haikus, then pass them to 'default.py'
+		This is the bulk of our python code and it represents our random generation of haikus, the rules used to better our haikus, and how we handle an input while adding it to a random haiku. Also this shows how we access the dictionary files and load them into a list that is easy for us to randomly access. In addition to this our 'UserInputMatching.py' implements a binary search used to efficiently check the user's input against our dictionaries. 
+
+/static
+	Static elements are here, like images, the dictionaries, our 'myCss.css' file that contains our css code, and some of our js code.
+		The static is pretty small, it only really shows the css code we implemented, which is key in all the html we do within views.
+
+/uploads
+	Uploads only contains our dictionaries that we use/access. This seems like a duplicate upload, however we use uploads as a backup
+
+/views
+	Within directory 'default' we have an html file for each of the 3 pages you see when going to the website. Files include 'inputRandomHaiku.html', 'pureRandomHaiku.html', and 'index.html', which represent our 3 website pages.
+		Views is the bulk of the js and html code done because it is all the pages that we have represented by the website. Also here we are showing/representing the variables created in 'default.py'.
+
