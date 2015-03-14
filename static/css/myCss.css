@@ -8,25 +8,46 @@
   background-color:#22A7F0; 
   color:red; 
   margin:40px; 
-  padding:40px;">
+  padding:40px;
 }
 
 h1{
   color:#2c3e50; 
   font-family:amazone_BT; 
-  text-align:center
+  text-align:center;
 }
 
 body{
   background-color: #2C3E50;
 }
 
+#topButtons{
+  width:100%;
+  text-align:center;
+}
+
+/*Haiku 2.0 Button*/
 #button1{
   float: right;
   position: relative; 
   top: -7px;
 }
 
+/*Random Haiku Button*/
 #button2{
-  
+  float: left;
+  position: relative;
+}
+
+/*Create Haiku button*/
+#button3{
+  float: center;
+  position: relative; 
+  top: -7px;
+}
+
+.rand_back_color {
+  color:red; 
+  margin:40px; 
+  padding:40px;">
 }

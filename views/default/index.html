@@ -2,19 +2,8 @@
 <!-- I extended base.html so that it can access jquery, css, and js files -->
 {{extend 'base.html'}}
 <html>
-	<head>
-		<meta charset="utf=8">
-		<style type="text/css">
-		#rand_back_color {
-			color:red; 
-			margin:40px; 
-			padding:40px;">
-		}
-		</style>
-	</head>
-
 	<body onload="return ran_col()">
-		<div id="rand_back_color">
+		<div class="rand_back_color">
 			<h1>
 				<p id="target"></p>
 			</h1>
