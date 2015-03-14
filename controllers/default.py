@@ -17,26 +17,31 @@ def randomHaiku():
 def test():
     return dict()
 
-# part of ajax sample 1: echos what you type
-def echo():
-    return "jQuery('#target').html(%s);" % repr(request.vars.name)
-
 def new_post():
     form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
-        getDbItem=db(db.npost.your_message!=None).select().last()
-        wordItem = getDbItem.your_message
-        wordInfo = userInputMatching.inputMatching(getDbItem.your_message)
-        wordLine = createLine(wordItem, wordInfo)
-        if(wordInfo != [0,0]):
-            return DIV(wordLine)
-        else:
-            return DIV("Sorry word not in dictionary. Even if you have entered a good word, our dictionaries are not perfect")
+        getDbItem1 = db(db.npost.entry1!=None).select().last()
+        getDbItem2 = db(db.npost.entry2!=None).select().last()
+        getDbItem3 = db(db.npost.entry3!=None).select().last()
+
+        wordItem1 = getDbItem1.entry1
+        wordInfo1 = userInputMatching.inputMatching(getDbItem1.entry1)
+        wordLine1 = createLine(wordItem1, wordInfo1, 5, 1)
+
+        wordItem2 = getDbItem2.entry2
+        wordInfo2 = userInputMatching.inputMatching(getDbItem2.entry2)
+        wordLine2 = createLine(wordItem2, wordInfo2, 7, 2)
+
+        wordItem3 = getDbItem3.entry3
+        wordInfo3 = userInputMatching.inputMatching(getDbItem3.entry3)
+        wordLine3 = createLine(wordItem3, wordInfo3, 5, 3)
+
+        return DIV(wordLine1 + "\n" + wordLine2 + "\n" + wordLine3)
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
 
-def createLine(itemStr, itemInfo):
-    return haikumake.createLine3(itemStr, itemInfo)
+def createLine(itemStr, itemInfo, sylCount, lineNum):
+    return haikumake.createLine3(itemStr, itemInfo, sylCount, lineNum)
 
 def user():
     """

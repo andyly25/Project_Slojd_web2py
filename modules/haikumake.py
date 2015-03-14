@@ -157,8 +157,7 @@ def createCustomLine(lineNumber, customWord, ((fileCountList, sylCountList), swa
 	retLine = randomEndPunc(retLine, lineNumber)
 	return retLine;		
 
-def createLine3(word, wordInfo):
-	theLists = getCustomLists(5, word, wordInfo)
+def createLine3(word, wordInfo, sylCount, lineNum):
+	theLists = getCustomLists(sylCount, word, wordInfo)
 	print theLists
-	print createCustomLine(1, word, theLists)
-	return word
+	return createCustomLine(lineNum, word, theLists)

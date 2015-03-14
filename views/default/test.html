@@ -3,15 +3,23 @@
 <!-- ajax sample 2 -->
 
 <form id="myform">
-  <input name="your_message" id="your_message" />
-  <input type="submit" />
+	<input name="entry1" id="entry1" />
+	<input name="entry2" id="entry2" />
+	<input name="entry3" id="entry3" />
+	<input type="submit" />
 </form>
-<div id="target2"></div>
+
+<body onload="return ran_col()">
+	<div class="joeBg rand_back_color">
+		<h1>
+			<pre id="target2"></pre>
+		</h1>
+	</div>
+</body>
 
 <script>
 jQuery('#myform').submit(function() {
-  ajax('{{=URL('new_post')}}',
-       ['your_message'], 'target2');
-  return false;
+	ajax('{{=URL('new_post')}}', ['entry1', 'entry2', 'entry3'], 'target2');
+	return false;
 });
 </script>
