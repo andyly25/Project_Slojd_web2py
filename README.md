@@ -1,4 +1,4 @@
-# Project_Slojd_web2py
+w
 
 Andy Ly
 Joseph Ou
@@ -21,11 +21,9 @@ Running through web2py:
 		Once it starts, there would be some popup. Add in some password and connect to the server. 
 		On a browser, some http://127.0.0.1:8000/welcome/default/index should appear.
 
-<<<<<<< HEAD
 		Click on Administrative interface and type in your password. 
-=======
+
 Once done, just go onto your terminal and cd into the folder location of your web2py and type in: python web2py.py
->>>>>>> 4bd254ec6e7eb44c1fe1840bb7b7b15351114b75
 
 	Way #1:
 		1. First take the folder 'Project_Slojd_web2py' and place it into your web2py/applications folder.
@@ -44,7 +42,6 @@ Online Version:
 
 Check the ABOUT file to see a short breakdown of each of the directories and what to expect within each.
   
-<<<<<<< HEAD
 ## When running the project
 There are 3 sections to our Haiku Project: A pure random haiku, a better/2.0 haiku, and an input haiku. Here are some descriptions/expectations of each.
 
@@ -56,11 +53,3 @@ Haiku 2.0:
 
 Create (input haiku):
 	This haiku is also a pure random haiku, however the user can enter in three words. After entering these three words, a haiku is generated that takes each word entered, and inserts each into a separate line of the haiku. Note that the words entered are completely dependent on our dictionary and alot of common words are not in these dictionaries for some reason. If you enter a word that is not in our dictionary, you will be noted and can enter other words to try. 
-=======
-## In the project
-There shall be Haikus!
-In the site there will be a Haiku that would be generated the moment you enter. This is from the Haiku Version 2.0 that shows by default. 
-There's 3 buttons on type and if you click on "Purely Random Haiku", it would generate a random Haiku.
-
-In Create, due to time constraints, if you type in three words that are contained in our dictionary, each line of the Haiku would contain your word. If one of the words is not contained, it would not show anything.
->>>>>>> 4bd254ec6e7eb44c1fe1840bb7b7b15351114b75
