@@ -1,3 +1,5 @@
+// This is the js that makes the typewriting effect
+
 $(function() {
     var srcText = $(".src").html();
     var i = 0;

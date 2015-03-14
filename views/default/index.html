@@ -1,10 +1,16 @@
 
 <!-- I extended base.html so that it can access jquery, css, and js files -->
 {{extend 'base.html'}}
+
+<!-- This is the main index page seen at the start which shows off a 
+	Haiku that has some grammatical structure
+ -->
 <html>
+	<!-- Gives random color -->
 	<body onload="return ran_col()">
 		<div class="rand_back_color">
 			<h1>
+				<!-- Where the Haiku appears -->
 				<p id="target"></p>
 			</h1>
 		</div>

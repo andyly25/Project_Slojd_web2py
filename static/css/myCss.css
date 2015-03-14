@@ -1,3 +1,14 @@
+h1{
+  color:#2c3e50; 
+  font-family:amazone_BT; 
+  text-align:center;
+}
+
+body{
+  background-color: #2C3E50;
+}
+
+/*Associated with typewriter.js*/
 .src {
   white-space: pre;
   display: none;
@@ -11,14 +22,10 @@
   padding:40px;
 }
 
-h1{
-  color:#2c3e50; 
-  font-family:amazone_BT; 
-  text-align:center;
-}
-
-body{
-  background-color: #2C3E50;
+.rand_back_color {
+  color:red; 
+  margin:40px; 
+  padding:40px;">
 }
 
 #topButtons{
@@ -46,8 +53,3 @@ body{
   top: -7px;
 }
 
-.rand_back_color {
-  color:red; 
-  margin:40px; 
-  padding:40px;">
-}
