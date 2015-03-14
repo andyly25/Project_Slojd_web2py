@@ -22,12 +22,13 @@ def echo():
     return "jQuery('#target').html(%s);" % repr(request.vars.name)
 
 def new_post():
-    q2=db(db.npost.your_message!=None).select().last()
+
     # q = db.npost.your_message
     # latest = db().select(db.npost.your_message)
     # latest = db(db.npost.your_message!=None).select()
     form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
+        q2=db(db.npost.your_message!=None).select().last()
         return DIV(userInputMatching.inputMatching(q2.your_message))
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
