@@ -29,8 +29,16 @@ def getRandomFileList (size):
 		count+=1
 	return fileList
 
+def randomEndPunc(line, lineNumber):
+	line = line[:-1]
+	commaRandInt = randint(1, 10)
+	if(commaRandInt < 5 and lineNumber < 3):
+		line += ","
+	elif(commaRandInt < 5):
+		line += "."
+	return line	
 
-def createLine(lineNumber, sylCountList, fileCountList):
+def createLine(lineNumber, fileCountList, sylCountList):
 	retLine = ""
 	for tempSy, tempFi in zip(sylCountList, fileCountList):
 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
@@ -39,12 +47,7 @@ def createLine(lineNumber, sylCountList, fileCountList):
 			break
 		tempLinesNum = randrange(0, len(tempLines))
 		retLine += tempLines[tempLinesNum] + " "
-	retLine = retLine[:-1]
-	commaRandInt = randint(1, 10)
-	if(commaRandInt < 4 and lineNumber < 3):
-		retLine += ","
-	elif(commaRandInt < 4):
-		retLine += "."
+	retLine = randomEndPunc(retLine, lineNumber)
 	return retLine;	
 
 def editLine (size, fileList):
@@ -99,8 +102,8 @@ def createHaiku2():
 	return haikuStr
 
 def getCustomLists (max, customWord, customWordInfo):
-	startSylNum = customWordInfo[0]
-	startFileNum = customWordInfo[1]
+	startSylNum = customWordInfo[1]
+	startFileNum = customWordInfo[0]
 
 	sylList = [startSylNum]
 	fileList = [startFileNum]
@@ -120,38 +123,42 @@ def getCustomLists (max, customWord, customWordInfo):
 		fileList.append(tempNum)
 		count+=1
 
-	return (fileList, sylList)
+	((finalFileList, finalSylList), index) = randomizeCustomList(fileList, sylList)
 
-# def createCustomLine(lineNumber, customWord, customWordInfo):
-# 	retLine = ""
-# 	for tempSy, tempFi in zip(sylCountList, fileCountList):
-# 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
-# 		if (len(tempLines)-1 < 1):
-# 			print("\n**ERROR**\n")
-# 			break
-# 		tempLinesNum = randrange(0, len(tempLines))
-# 		retLine += tempLines[tempLinesNum] + " "
-# 	retLine = retLine[:-1]
-# 	commaRandInt = randint(1, 10)
-# 	if(commaRandInt < 4 and lineNumber < 3):
-# 		retLine += ","
-# 	elif(commaRandInt < 4):
-# 		retLine += "."
-# 	return retLine;		
+	return ((finalFileList, finalSylList), index)
 
-def getItem(word, wordInfo):
-	return getCustomLists(5, word, wordInfo)
+def randomizeCustomList(fList, sList):
+	swap = randint(0, len(fList)-1)
+	if(swap != 0):
+		temp = fList[0]
+		fList[0] = fList[swap]
+		fList[swap] = temp
+		temp = sList[0]
+		sList[0] = sList[swap]
+		sList[swap] = temp
+	return ((fList, sList), swap)
+
+def createCustomLine(lineNumber, customWord, ((fileCountList, sylCountList), swap)):
+	retLine = ""
+	ind = 0
+	while(ind < len(sylCountList)):
+		tempSy = sylCountList[ind]
+		tempFi = fileCountList[ind]
+		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
+		if (len(tempLines)-1 < 1):
+			print("\n**ERROR**\n")
+			break
+		if(swap == ind):
+			retLine += customWord + " "
+		else:
+			tempLinesNum = randrange(0, len(tempLines))
+			retLine += tempLines[tempLinesNum] + " "
+		ind+=1
+	retLine = randomEndPunc(retLine, lineNumber)
+	return retLine;		
 
 def createLine3(word, wordInfo):
-	# customLists = getCustomLists (5, word, wordInfo)
-	print getItem(word, wordInfo)
+	theLists = getCustomLists(5, word, wordInfo)
+	print theLists
+	print createCustomLine(1, word, theLists)
 	return word
-
-
-
-
-
-
-
-
-

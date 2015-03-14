@@ -27,11 +27,11 @@ def new_post():
         getDbItem=db(db.npost.your_message!=None).select().last()
         wordItem = getDbItem.your_message
         wordInfo = userInputMatching.inputMatching(getDbItem.your_message)
-        if(wordInfo == [0,0]):
-            return DIV("NOT IN DICTIONARIES")
+        wordLine = createLine(wordItem, wordInfo)
+        if(wordInfo != [0,0]):
+            return DIV(wordLine)
         else:
-            wordLine = createLine(wordItem, wordInfo)
-        return DIV(wordLine)
+            return DIV("Sorry word not in dictionary. Even if you have entered a good word, our dictionaries are not perfect")
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
 
