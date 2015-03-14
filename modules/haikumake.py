@@ -1,9 +1,11 @@
 from random import randint
 from random import randrange
+from random import shuffle
 import sys
 import glob
 import errno
 import HaikuMod
+import userInputMatching
 
 def getRandomSyllableList (max):
 	startNum = randint(1, 4)
@@ -29,8 +31,6 @@ def getRandomFileList (size):
 
 
 def createLine(lineNumber, sylCountList, fileCountList):
-	# print ("SYL: " + str(sum(sylCountList)))
-	# print ("FILE: " + str(fileCountList))
 	retLine = ""
 	for tempSy, tempFi in zip(sylCountList, fileCountList):
 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
@@ -97,3 +97,61 @@ def createHaiku2():
 				createLine(3, sylList3, editLine(len(sylList3), fileList3)) + "\n")
 
 	return haikuStr
+
+def getCustomLists (max, customWord, customWordInfo):
+	startSylNum = customWordInfo[0]
+	startFileNum = customWordInfo[1]
+
+	sylList = [startSylNum]
+	fileList = [startFileNum]
+
+	remainSyl = max - startSylNum
+	while (remainSyl > 0):
+		if(remainSyl > 4):
+			tempNum = randint(1, 4)
+		else: 
+			tempNum = randint(1, remainSyl)
+		sylList.append(tempNum)
+		remainSyl-=tempNum
+
+	count = 1
+	while (count < len(sylList)):
+		tempNum = randint(1, 4)
+		fileList.append(tempNum)
+		count+=1
+
+	return (fileList, sylList)
+
+# def createCustomLine(lineNumber, customWord, customWordInfo):
+# 	retLine = ""
+# 	for tempSy, tempFi in zip(sylCountList, fileCountList):
+# 		tempLines = HaikuMod.getWordFile(tempFi, tempSy)
+# 		if (len(tempLines)-1 < 1):
+# 			print("\n**ERROR**\n")
+# 			break
+# 		tempLinesNum = randrange(0, len(tempLines))
+# 		retLine += tempLines[tempLinesNum] + " "
+# 	retLine = retLine[:-1]
+# 	commaRandInt = randint(1, 10)
+# 	if(commaRandInt < 4 and lineNumber < 3):
+# 		retLine += ","
+# 	elif(commaRandInt < 4):
+# 		retLine += "."
+# 	return retLine;		
+
+def getItem(word, wordInfo):
+	return getCustomLists(5, word, wordInfo)
+
+def createLine3(word, wordInfo):
+	# customLists = getCustomLists (5, word, wordInfo)
+	print getItem(word, wordInfo)
+	return word
+
+
+
+
+
+
+
+
+

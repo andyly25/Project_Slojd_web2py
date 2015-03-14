@@ -22,16 +22,21 @@ def echo():
     return "jQuery('#target').html(%s);" % repr(request.vars.name)
 
 def new_post():
-
-    # q = db.npost.your_message
-    # latest = db().select(db.npost.your_message)
-    # latest = db(db.npost.your_message!=None).select()
     form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
-        q2=db(db.npost.your_message!=None).select().last()
-        return DIV(userInputMatching.inputMatching(q2.your_message))
+        getDbItem=db(db.npost.your_message!=None).select().last()
+        wordItem = getDbItem.your_message
+        wordInfo = userInputMatching.inputMatching(getDbItem.your_message)
+        if(wordInfo == [0,0]):
+            return DIV("NOT IN DICTIONARIES")
+        else:
+            wordLine = createLine(wordItem, wordInfo)
+        return DIV(wordLine)
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
+
+def createLine(itemStr, itemInfo):
+    return haikumake.createLine3(itemStr, itemInfo)
 
 def user():
     """

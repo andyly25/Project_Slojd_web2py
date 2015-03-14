@@ -7,16 +7,10 @@ import os
 
 from HaikuMod import getWordFile
 
-#fileIn = getWordFile(1,1)
-
-#lowerBound = 0
-#UpperBound = len(fileIn)
-
-
-#binary search that returns 1 if found and 0 if not
+# binary search that returns 1 if found and 0 if not
 def binarySearch(wordFile, key, lowerBound, UpperBound):
 	if (UpperBound <= lowerBound):
-		print("reached the end without finding solution")
+		# print("reached the end without finding solution")
 		return 0;
 	else:
 		#round the midpoint down
@@ -34,10 +28,8 @@ def binarySearch(wordFile, key, lowerBound, UpperBound):
 			return 1;
 
 
-#print binarySearch(getWordFile(1,1), "pears", 0, len(getWordFile(1,1)))
-
-
-#inputMatching takes a string and compares it to the source dictionaries. if found, it returns 1
+# inputMatching takes a string and compares it to the source dictionaries. if found, it returns 1
+# returns (File Number, Syllable Number)
 def inputMatching(userIn):
 	i = 0
 	j = 0
@@ -45,13 +37,11 @@ def inputMatching(userIn):
 		for j in range(1,5):
 			fileIn = getWordFile(i,j)
 			hello = len(fileIn)
-			print hello
+			# print hello
 			total = binarySearch(fileIn, userIn, 0, len(fileIn))
 			output = [i, j]
-			print output
+			# print output
 			if (total != 0):
 				return output
 				break
 	return [0,0]
-
-print inputMatching("obfuscation")
