@@ -1,0 +1,33 @@
+{{extend 'base.html'}}
+
+<!-- This form takes in 3 words from the user.
+	if the word exists in the dictionary everything will work fine,
+	otherwise, nothing should show.
+ -->
+
+<form id="myform">
+	<input name="entry1" id="entry1" />
+	<input name="entry2" id="entry2" />
+	<input name="entry3" id="entry3" />
+	<input type="submit" />
+</form>
+
+<!-- This is the target location where the Haiku appears -->
+<body onload="return ran_col()">
+	<div class="joeBg rand_back_color">
+		<h1>
+			<pre id="target2"></pre>
+		</h1>
+	</div>
+</body>
+
+<!-- This is the ajax portion that takes the user input and returns back
+	to the controller to use, which would spit out the data that goes to 
+	target2
+ -->
+<script>
+jQuery('#myform').submit(function() {
+	ajax('{{=URL('new_post')}}', ['entry1', 'entry2', 'entry3'], 'target2');
+	return false;
+});
+</script>

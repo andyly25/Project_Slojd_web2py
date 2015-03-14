@@ -1,0 +1,17 @@
+
+<!-- I extended base.html so that it can access jquery, css, and js files -->
+{{extend 'base.html'}}
+
+<!-- This is the random haiku page where the Haiku is 
+	completely random.
+ -->
+<html>
+	<body onload="return ran_col()">
+		<div class="joeBg rand_back_color">
+			<h1>
+				<p id="target"></p>
+			</h1>
+		</div>
+		<pre class="src">{{=haiku2}} </pre>
+	</body>
+</html>
