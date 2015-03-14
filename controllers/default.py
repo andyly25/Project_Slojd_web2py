@@ -2,21 +2,28 @@
 # this file is released under public domain and you can use without limitations
 
 import indexmod
-import haikumake
-import userInputMatching
+import HaikuMake
+import UserInputMatching
 
+# Passes haiku type 2 to a variable that the html
+# file can read and present
 def index():
-    haiku1 = haikumake.createHaiku1()
-    haiku2 = haikumake.createHaiku2()
-    return dict(haiku1=haiku1, haiku2=haiku2)
-
-def randomHaiku():
-    haiku2 = haikumake.createHaiku2()
+    haiku2 = HaikuMake.createHaiku2()
     return dict(haiku2=haiku2)
 
-def test():
+# Passes haiku type 1 to a variable that the html
+# file can read and present
+def pureRandomHaiku():
+    haiku1 = HaikuMake.createHaiku1()
+    return dict(haiku1=haiku1)
+
+# Placeholder for the input file html page, returns nothing
+def inputRandomHaiku():
     return dict()
 
+# Defines a new post, which gets the 3 most recent entries
+# into our database and passes them to the HaikuMake file which helps make our
+# custom haiku
 def new_post():
     form = SQLFORM(db.npost)
     if form.accepts(request, formname=None):
@@ -25,23 +32,24 @@ def new_post():
         getDbItem3 = db(db.npost.entry3!=None).select().last()
 
         wordItem1 = getDbItem1.entry1
-        wordInfo1 = userInputMatching.inputMatching(getDbItem1.entry1)
+        wordInfo1 = UserInputMatching.inputMatching(getDbItem1.entry1)
         wordLine1 = createLine(wordItem1, wordInfo1, 5, 1)
 
         wordItem2 = getDbItem2.entry2
-        wordInfo2 = userInputMatching.inputMatching(getDbItem2.entry2)
+        wordInfo2 = UserInputMatching.inputMatching(getDbItem2.entry2)
         wordLine2 = createLine(wordItem2, wordInfo2, 7, 2)
 
         wordItem3 = getDbItem3.entry3
-        wordInfo3 = userInputMatching.inputMatching(getDbItem3.entry3)
+        wordInfo3 = UserInputMatching.inputMatching(getDbItem3.entry3)
         wordLine3 = createLine(wordItem3, wordInfo3, 5, 3)
 
         return DIV(wordLine1 + "\n" + wordLine2 + "\n" + wordLine3)
     elif form.errors:
         return TABLE(*[TR(k, v) for k, v in form.errors.items()])
 
+# Accesses HaikuMake function that creates each line of the custom inputted haiku
 def createLine(itemStr, itemInfo, sylCount, lineNum):
-    return haikumake.createLine3(itemStr, itemInfo, sylCount, lineNum)
+    return HaikuMake.createLine3(itemStr, itemInfo, sylCount, lineNum)
 
 def user():
     """
