@@ -33,14 +33,20 @@ def new_post():
 
         wordItem1 = getDbItem1.entry1
         wordInfo1 = UserInputMatching.inputMatching(getDbItem1.entry1)
+        if(wordInfo1[0] == 0):
+            return DIV(wordItem1 + " is not in our dictionary!\nSorry, enter another word.")
         wordLine1 = createLine(wordItem1, wordInfo1, 5, 1)
 
         wordItem2 = getDbItem2.entry2
         wordInfo2 = UserInputMatching.inputMatching(getDbItem2.entry2)
+        if(wordInfo2[0] == 0):
+            return DIV(wordItem2 + " is not in our dictionary!\nSorry, enter another word.")
         wordLine2 = createLine(wordItem2, wordInfo2, 7, 2)
 
         wordItem3 = getDbItem3.entry3
         wordInfo3 = UserInputMatching.inputMatching(getDbItem3.entry3)
+        if(wordInfo3[0] == 0):
+            return DIV(wordItem3 + " is not in our dictionary!\nSorry, enter another word.")
         wordLine3 = createLine(wordItem3, wordInfo3, 5, 3)
 
         return DIV(wordLine1 + "\n" + wordLine2 + "\n" + wordLine3)
