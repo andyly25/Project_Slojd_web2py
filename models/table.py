@@ -1,3 +1,6 @@
+# This is our npost table, it is a database that 
+# holds entries for the input haiku page, each entry is
+# composed of 3 words, each of the ones a person enters
 db.define_table('npost',
 		Field('entry1', 'text'),
 		Field('entry2', 'text'),
