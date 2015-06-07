@@ -1,4 +1,4 @@
-w
+We moved everything we had from https://github.com/shivamndave/Project-Slojd over to here and switched from Flask to Web2Py.
 
 Andy Ly
 Joseph Ou
